@@ -3,14 +3,8 @@ import fetch from 'node-fetch';
 import { FetchException } from '../../domain';
 
 abstract class FetchRepository {
-	private url: string;
-
-	constructor(url: string) {
-		this.url = url;
-	}
-
-	async get() {
-		const res = await fetch(this.url);
+	async get(url: string) {
+		const res = await fetch(url);
 		const data = res.json();
 
 		if (!res.ok) {
