@@ -12,9 +12,17 @@ class StringDateValue extends ValueObject<string> {
 		this.validate();
 	}
 
-	private validate() {}
+	private validate() {
+		var milisecs = Date.parse(this.stringDate);
 
-	getDate() {}
+		if (isNaN(milisecs)) {
+			throw new InvalidArgumentError('Invalid date format');
+		}
+	}
+
+	getDate() {
+		return new Date(this.stringDate);
+	}
 }
 
 export { StringDateValue };
