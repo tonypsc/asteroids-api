@@ -1,10 +1,6 @@
 import fetch from 'node-fetch';
 
-import {
-	AggregateRoot,
-	FetchException,
-	NonEmptyStringValue,
-} from '../../domain';
+import { FetchException } from '../../domain';
 
 abstract class FetchRepository {
 	private url: string;
