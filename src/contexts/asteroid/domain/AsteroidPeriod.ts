@@ -1,24 +1,21 @@
 import { InvalidArgumentError } from '../../shared/domain';
+import { StringDateValue } from '../../shared/domain/StringDateValue';
 
 class AsteroidPeriod {
-	private initialDate: Date;
-	private endDate: Date;
+	private initialDate: StringDateValue;
+	private endDate: StringDateValue;
 
-	constructor(initialDate: string, endDate: string) {
-		this.validate(initialDate, endDate);
-		this.initialDate = new Date(initialDate);
-		this.endDate = new Date(endDate);
+	constructor(initialDate: StringDateValue, endDate: StringDateValue) {
+		this.initialDate = initialDate;
+		this.endDate = endDate;
+		this.validate();
 	}
 
-	validate(initialDate: string, endDate: string) {
+	validate() {
 		const milisecsInWeek = 8 * 24 * 60 * 60 * 1000;
 
-		var iDate = Date.parse(initialDate);
-		var eDate = Date.parse(endDate);
-
-		if (isNaN(iDate) || isNaN(eDate)) {
-			throw new InvalidArgumentError('Invalid date format');
-		}
+		const iDate = this.initialDate.getDate().getTime();
+		const eDate = this.endDate.getDate().getTime();
 
 		if (eDate < iDate) {
 			throw new InvalidArgumentError('Invalid period');
@@ -35,11 +32,11 @@ class AsteroidPeriod {
 	}
 
 	getInitialDateString() {
-		return this.dateToString(this.initialDate);
+		return this.dateToString(this.initialDate.getDate());
 	}
 
 	getEndDateString() {
-		return this.dateToString(this.endDate);
+		return this.dateToString(this.endDate.getDate());
 	}
 }
 

@@ -10,6 +10,7 @@ import { FetchException } from './exceptions/FetchException';
 import { AggregateRoot } from './AggregateRoot';
 import { ValueObject } from './ValueObject';
 import { NonEmptyStringValue } from './NonEmptyStringValue';
+import { StringDateValue } from './StringDateValue';
 
 export {
 	ValueObject,
@@ -21,4 +22,5 @@ export {
 	NonEmptyStringValue,
 	ExecutionException,
 	FetchException,
+	StringDateValue,
 };
