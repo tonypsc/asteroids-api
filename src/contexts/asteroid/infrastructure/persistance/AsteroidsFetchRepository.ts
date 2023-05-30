@@ -19,3 +19,5 @@ class AsteroidFetchRepository
 		return {} as AsteroidDto;
 	}
 }
+
+export { AsteroidFetchRepository };
