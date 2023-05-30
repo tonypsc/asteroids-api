@@ -2,7 +2,8 @@ import { ConfigType } from '../types';
 import { defaults } from '../defaults';
 
 const environment: ConfigType = {
-	dbHostName: 'mongodb://localhost/residen-test',
+	dbHostName: 'mongodb://localhost/asteroid-test',
+	asteroidsApi: process.env.ASTEROIDS_API,
 };
 
 export { environment };

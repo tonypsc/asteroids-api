@@ -1,4 +1,2 @@
 DB_HOST = mongodb://localhost:27017
-PORT: 4001
-RECOVER_LINK_EXPIRATION=15
-CONFIRMATION_LINK_EXPIRATION=15
+ASTEROIDS_API = https://api.nasa.gov/neo/rest/v1
