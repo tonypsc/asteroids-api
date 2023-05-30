@@ -6,14 +6,23 @@ import {
 	NonEmptyStringValue,
 } from '../../domain';
 
-abstract class FetchRepository<T extends AggregateRoot> {
+abstract class FetchRepository {
 	private url: string;
 
-	constructor(url: NonEmptyStringValue) {
-		this.url = url.value;
+	constructor(url: string) {
+		this.url = url;
 	}
 
-	async get() {}
+	async get() {
+		const res = await fetch(this.url);
+		const data = res.json();
+
+		if (!res.ok) {
+			throw new FetchException(JSON.stringify(data));
+		}
+
+		return data;
+	}
 }
 
 export { FetchRepository };
