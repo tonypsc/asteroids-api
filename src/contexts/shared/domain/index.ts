@@ -5,6 +5,7 @@ import { UuidValue } from './UuidValue';
 import { InvalidArgumentError } from './exceptions/InvalidArgumentError';
 import { NotFoundException } from './exceptions/NotFoundException';
 import { ExecutionException } from './exceptions/ExecutionException';
+import { FetchException } from './exceptions/FetchException';
 
 import { AggregateRoot } from './AggregateRoot';
 import { ValueObject } from './ValueObject';
@@ -19,4 +20,5 @@ export {
 	NotFoundException,
 	NonEmptyStringValue,
 	ExecutionException,
+	FetchException,
 };
