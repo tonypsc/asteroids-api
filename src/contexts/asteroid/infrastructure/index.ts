@@ -1,3 +1,4 @@
 import { AsteroidFetchRepository } from './persistance/AsteroidsFetchRepository';
+import { FavouritesMongoRepository } from './persistance/FavouritesMongoRepository';
 
-export { AsteroidFetchRepository };
+export { AsteroidFetchRepository, FavouritesMongoRepository };
