@@ -6,3 +6,5 @@ class FavouritesMongoRepository extends MongoRepository<Favourites> {
 		return 'favourites';
 	}
 }
+
+export { FavouritesMongoRepository };
