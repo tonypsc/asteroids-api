@@ -1,5 +1,3 @@
-abstract class AggregateRoot {
-	abstract toPrimitives(): any;
-}
+abstract class AggregateRoot {}
 
 export { AggregateRoot };

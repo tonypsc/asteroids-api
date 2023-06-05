@@ -1,6 +1,9 @@
-import { AsteroidDto } from './AsteroidDto';
+import { Favourite } from './Favourite';
 
 interface FavouritesRepository {
-	add(asteroid: AsteroidDto): Promise<string>;
-	getById(id: string): Promise<AsteroidDto>;
+	add(asteroid: Favourite): Promise<string>;
+	getAll(): Promise<Favourite[]>;
+	getById(id: string): Promise<Favourite>;
 }
+
+export { FavouritesRepository };
