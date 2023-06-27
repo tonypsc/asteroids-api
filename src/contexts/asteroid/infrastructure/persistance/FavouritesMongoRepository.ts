@@ -17,7 +17,7 @@ class FavouritesMongoRepository
 	}
 
 	async getAll(): Promise<Favourite[]> {
-		return this.find();
+		return this.find<Favourite>();
 	}
 
 	async getById(id: string): Promise<Favourite | null> {

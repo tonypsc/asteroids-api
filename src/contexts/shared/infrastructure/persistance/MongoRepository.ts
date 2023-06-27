@@ -1,4 +1,11 @@
-import { MongoClient, Collection, Document } from 'mongodb';
+import {
+	MongoClient,
+	Collection,
+	Document,
+	Condition,
+	ObjectId,
+	WithId,
+} from 'mongodb';
 
 import { config } from '../../../../config';
 import { AggregateRoot } from '../../domain/AggregateRoot';
@@ -34,7 +41,7 @@ export abstract class MongoRepository<T extends AggregateRoot> {
 		const collection = this.collection();
 
 		const result = await collection.updateOne(
-			{ _id: id },
+			{ _id: new ObjectId(id) },
 			{ $set: aggregate },
 			{ upsert: true }
 		);
